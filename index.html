@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costa Este RP - Normativa y Reglamento</title>
+    <title>Costa Este RP - Normativa y Reglamento Oficial</title>
     <style>
         :root {
             --primary: #E50914; /* Rojo intenso */
@@ -60,7 +60,7 @@
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            margin-left: 2.5rem;
+            margin-left: 2rem;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
@@ -87,17 +87,18 @@
 
         /* Sección principal (Hero) */
         .hero {
-            height: 85vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 1.5rem;
+            margin-top: 2rem;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.2rem;
             margin-bottom: 1.2rem;
             letter-spacing: -1px;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
@@ -121,6 +122,58 @@
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
         }
 
+        /* Bloque informativo del servidor */
+        .server-info-box {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.9s;
+        }
+
+        .info-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 200px;
+        }
+
+        .info-card h4 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-card p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .status-online {
+            color: #10B981;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            margin: 0 0.8rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
         .btn-cta {
             background: var(--primary);
             color: var(--text-main);
@@ -132,8 +185,6 @@
             border: none;
             box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 1s;
         }
 
         .btn-cta:hover {
@@ -174,7 +225,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
 
@@ -216,6 +267,16 @@
             line-height: 1.7;
         }
 
+        .card ul, .card ol {
+            list-style: none;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
         /* Animaciones clave */
         @keyframes fadeInUp {
             to {
@@ -244,16 +305,37 @@
     <header>
         <div class="logo">Costa Este <span>RP</span></div>
         <nav>
-            <a href="#conceptos">Conceptos</a>
-            <a href="#comandos">Comandos</a>
-            <a href="#normas">Normas Generales</a>
-            <a href="#negocios">Negocios</a>
+            <a href="#conceptos">1. Conceptos</a>
+            <a href="#comandos">2. Comandos</a>
+            <a href="#normas">3. Normativa General</a>
+            <a href="#negocios">Normativa Negocios</a>
+            <a href="#proximos">Próximamente</a>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Bienvenidos a <span>Costa Este RP</span></h1>
         <p>El servidor definitivo donde cada decisión cuenta. Descubre la normativa general y el reglamento para una convivencia justa e inmersiva.</p>
+        
+        <div class="server-info-box">
+            <div class="info-card">
+                <h4>Status del Servidor</h4>
+                <p class="status-online">● ONLINE</p>
+            </div>
+            <div class="info-card">
+                <h4>Fundadores</h4>
+                <p>Equipo Costa Este</p>
+            </div>
+            <div class="info-card">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank">Discord</a>
+                    <a href="#" target="_blank">Twitter</a>
+                    <a href="#" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+
         <a href="#normas" class="btn-cta">Ver Normativa</a>
     </section>
 
@@ -264,19 +346,46 @@
             <div class="grid">
                 <div class="card">
                     <h3>IN CHARACTER (IC)</h3>
-                    <p>Es todo lo que sucede "in-game". Es la vida de tu personaje y sus interacciones dentro de la ciudad de Costa Este.</p>
+                    <p>Es todo lo que sucede in-game, todo lo que rodea y vive nuestro personaje en la ciudad de Costa Este RP.</p>
                 </div>
                 <div class="card">
                     <h3>OUT OF CHARACTER (OOC)</h3>
-                    <p>Es todo lo que ocurre fuera del juego. No se puede utilizar esta información para conseguir beneficios dentro del juego.</p>
+                    <p>Es todo aquello que ocurre fuera del juego. Esto no puede utilizarse para conseguir algún beneficio dentro del juego.</p>
+                </div>
+                <div class="card">
+                    <h3>IDENTIDAD DEL PERSONAJE (IDP)</h3>
+                    <p>La IDP es el conjunto de rasgos, historia, personalidad y decisiones que definen quién es tu personaje dentro del rol. El usuario debe mantener la coherencia de esta identidad en todas sus acciones, evitando contradicciones o cambios bruscos que no tengan justificación dentro del rol.</p>
                 </div>
                 <div class="card">
                     <h3>METAGAMING (MG)</h3>
-                    <p>El Metagaming es el uso de información que se haya obtenido fuera de la ciudad (fuera del juego o OOC).</p>
+                    <p>El Metagaming (MG) es el uso de información que se haya obtenido fuera de la ciudad, es decir, OOC.</p>
                 </div>
                 <div class="card">
                     <h3>POWERGAMING (PG)</h3>
-                    <p>Son aquellas acciones posibles en el juego pero que en la vida real no podemos realizar, como no rolear tras un accidente.</p>
+                    <p>El Power Gaming (PG) son todas aquellas acciones que pueden realizarse en el juego, pero que en la vida real no podemos realizar. Ejemplos: Correr con una persona en brazos, saltar desde un edificio alto y hacer como que no ha pasado nada, tener un accidente de tráfico y no rolear sentir dolor, o saltar repetidamente para huir demasiado rápido.</p>
+                </div>
+                <div class="card">
+                    <h3>PG DE INVENTARIO</h3>
+                    <p>Para poder portar encima cierto tipo de objetos, es necesario que nuestro personaje lleve una mochila o un bolso. En caso de no llevar bolso o mochila, será necesario rolear con el /me y el /do el uso de los mismos.</p>
+                </div>
+                <div class="card">
+                    <h3>DEATHMATCH Y VDM</h3>
+                    <p><strong>Deathmatch (DM):</strong> Es la acción de matar sin motivo o sin ningún motivo de peso a algún usuario.<br>
+                    <strong>Vehicle Deathmatch (VDM):</strong> Es el uso de un vehículo como arma para dañar o matar a otro usuario realizándole un atropello o continuos atropellos.</p>
+                </div>
+                <div class="card">
+                    <h3>MORTES Y MEMORIA</h3>
+                    <ul>
+                        <li><strong>RK:</strong> Hacer caso omiso de la pérdida de memoria (PK o PKT) para vengarse matando al jugador que le abatió.</li>
+                        <li><strong>PK:</strong> Pérdida de memoria del rol anterior al reaparecer en el hospital.</li>
+                        <li><strong>PKT:</strong> Al abandonar una facción legal o ilegal se debe rolear no recordar información de dicha facción ni de sus miembros.</li>
+                        <li><strong>CK:</strong> Muerte total del personaje, perdiendo todos los bienes.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>BUG ABUSE Y FAIRPLAY</h3>
+                    <p><strong>Bug Abuse (BA):</strong> Abuso de cualquier tipo de bug para beneficio propio. Debe ser notificado mediante un reporte.<br>
+                    <strong>Fairplay:</strong> Actuar de manera honesta, equilibrada y respetuosa para no romper la igualdad de condiciones entre participantes.</p>
                 </div>
             </div>
         </section>
@@ -285,42 +394,59 @@
             <h2 class="section-title"><span>Comandos</span> de Rol</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>/me y /do</h3>
-                    <p>Usa <strong>/me</strong> para realizar acciones que no figuran en el listado, y <strong>/do</strong> para expresar emociones, características del entorno o pedir permiso.</p>
+                    <h3>USO DEL /ME Y /DO</h3>
+                    <p><strong>/me</strong>: Se utiliza cuando se desea realizar alguna acción la cual no figura en el listado de acciones del servidor. Ejemplo: /me Presiona el botón para que se encienda el ordenador.</p>
+                    <p><strong>/do</strong>: Expresa emociones o características de nuestro personaje, describe el entorno y se utiliza para pedir permiso, siendo necesario un <strong>/me</strong> previo.</p>
                 </div>
                 <div class="card">
-                    <h3>/entorno</h3>
-                    <p>Se utiliza cuando queremos realizar una llamada a la policía (CNP) en tercera persona explicando una situación durante un acto ilícito.</p>
+                    <h3>USO DEL /ENTORNO</h3>
+                    <p>Se utiliza cuando queremos realizar una llamada a la policía (CNP) en tercera persona explicando una situación y describiendo a las personas y vehículos implicados. El entorno debe ser enviado durante la realización del acto ilícito.</p>
                 </div>
                 <div class="card">
-                    <h3>/auxilio</h3>
+                    <h3>USO DEL /AUXILIO</h3>
                     <p>Sirve para realizar una llamada a los EMS en tercera persona, explicando qué le ha ocurrido al sujeto herido o abatido.</p>
                 </div>
                 <div class="card">
-                    <h3>/dados y /intentar</h3>
-                    <p>Deciden al azar una opción que beneficie o perjudique a uno de los dos jugadores y que puede devolver "Sí" o "No".</p>
+                    <h3>USO DEL /DADOS Y /INTENTAR</h3>
+                    <p><strong>/dados</strong>: Decide al azar (número par=Sí, impar=NO).<br>
+                    <strong>/intentar</strong>: Comando automático que devuelve Sí o un NO para influir en una acción.</p>
                 </div>
             </div>
         </section>
 
         <section id="normas" style="margin-top: 7rem;">
-            <h2 class="section-title"><span>Normas</span> Generales</h2>
+            <h2 class="section-title">Normativa <span>General</span></h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Valorar tu vida</h3>
-                    <p>Obligación de preservar la integridad física de tu personaje ante una situación de peligro, tomando decisiones prudentes.</p>
+                    <h3>VALORAR TU VIDA Y EVADIR ROL</h3>
+                    <p><strong>Valorar tu vida</strong>: Obligación de todo jugador de preservar la integridad física de su personaje, adoptando decisiones prudentes y acordes a una situación de peligro.<br>
+                    <strong>Evadir Rol</strong>: Prohibido ingresar en una zona segura, desconectarse o tirar de "E" al ser abatido.</p>
                 </div>
                 <div class="card">
-                    <h3>Zonas Seguras</h3>
-                    <p>Prohibido realizar actos ilícitos o iniciar un rol agresivo en áreas como hospitales, concesionarios y negocios abiertos.</p>
+                    <h3>INTERVENCIÓN Y REGLAS DE ROL</h3>
+                    <p><strong>Cortar Rol</strong>: Prohibido salir del personaje para hablar cosas OOC mientras estás IC.<br>
+                    <strong>Invadir rol ajeno</strong>: Se prohíbe intervenir en una escena de rol en la que no has participado (p.e. cachear gente abatida por la policía).</p>
                 </div>
                 <div class="card">
-                    <h3>Roles Agresivos con Vehículos</h3>
-                    <p>No se puede disparar a abatir de coche a coche, ni de coche a persona a pie, ni de pie a coche, salvo que no se valore la vida.</p>
+                    <h3>RETORNO DE ROL Y PROHIBICIÓN DE BIENES</h3>
+                    <p><strong>Volver tras ser abatido</strong>: Prohibido regresar al mismo rol o uno nuevo agresivo antes de 20 minutos.<br>
+                    <strong>Prohibido regalar bienes previo a CK</strong>: No se permite traspasar bienes antes de un CK.</p>
                 </div>
                 <div class="card">
-                    <h3>Respeto y Comportamientos</h3>
-                    <p>No se tolera el racismo, machismo u homofobia ni en OOC ni mediante roles de esa naturaleza a nivel IC.</p>
+                    <h3>RESTRICCIONES Y COMPORTAMIENTOS</h3>
+                    <p><strong>Reconocer a una persona</strong>: Nunca se podrá reconocer a alguien por su voz si se encuentra enmascarado o ha cambiado su aspecto físico.<br>
+                    <strong>Uso de VPN y Citizens</strong>: Prohibido el uso de VPN y de citizens que brinden ventajas, pero permitidos los gráficos.</p>
+                </div>
+                <div class="card">
+                    <h3>ROLES AGRESIVOS Y ZONAS SEGURAS</h3>
+                    <p><strong>Roles agresivos con vehículos</strong>: No se puede disparar a abatir de coche a coche o de pie a coche. Si no valoran su vida podrán ser abatidos.<br>
+                    <strong>Zonas seguras</strong>: Prohibido actos ilícitos en el hospital, gimnasios, concesionarios, Airsoft, oficina de empleo, casino o negocios abiertos.</p>
+                </div>
+                <div class="card">
+                    <h3>ACTIVIDADES LEGALES Y OTROS</h3>
+                    <p><strong>Trabajadores</strong>: No se puede atracar a un usuario mientras realiza actividades/trabajos legales.<br>
+                    <strong>Hacerse pasar por facciones</strong>: Prohibido hacerse pasar por facciones legales.<br>
+                    <strong>Racismo/Homofobia</strong>: No se tolerará ningún tipo de comportamiento racista, machista u homófobo.</p>
                 </div>
             </div>
         </section>
@@ -329,20 +455,62 @@
             <h2 class="section-title">Normativa de <span>Negocios</span></h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Protocolo de Apertura</h3>
-                    <p>Al abrir el negocio debe permanecer operativo al público al menos 20 minutos. Prohibido ausentarse durante este tiempo.</p>
+                    <h3>1. PROTOCOLO DE APERTURA Y ANUNCIOS</h3>
+                    <ul>
+                        <li><strong>Regulación de anuncios</strong>: Prohibido enviar anuncios de apertura o publicidad antes de transcurridos 15 minutos.</li>
+                        <li><strong>Tiempo mínimo</strong>: Operativo y abierto al público por un tiempo mínimo de 20 minutos.</li>
+                        <li><strong>Presencia</strong>: Obligatorio permanecer físicamente dentro atendiendo a los clientes.</li>
+                        <li><strong>Actividad de foto</strong>: Enviar foto obligatoria de apertura y cierre con el mensaje en la nube. Si no, se sanciona con un strike.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Gestión de Caja</h3>
-                    <p>Se debe enviar foto del monedero cada 48 horas. Solo los jefes o subjefes pueden manipular la caja con previo aviso.</p>
+                    <h3>2. GESTIÓN DE CAJA Y COBROS</h3>
+                    <ul>
+                        <li><strong>Registro de monedero</strong>: Enviar foto de monedero cada 48H.</li>
+                        <li><strong>La caja</strong>: Solo la pueden tocar los jefes o subjefes con previo aviso.</li>
+                        <li><strong>Datáfono</strong>: Todo cobro que se haga con el datáfono de mal uso será sancionado. Debe estar siempre en el negocio.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Sistemas de Penalizaciones</h3>
-                    <p>El incumplimiento reiterado lleva a multas o strikes. Acumular tres strikes conlleva la disolución definitiva e irrevocable del negocio.</p>
+                    <h3>3. PERSONAL Y ÁREA DE NEGOCIOS</h3>
+                    <ul>
+                        <li><strong>Discord</strong>: Los jefes deben solicitar el rol en el Discord de negocios.</li>
+                        <li><strong>Límite de empleados</strong>: 2 jefes, 2 subjefes y hasta 10 empleados en total.</li>
+                        <li><strong>Inactividad</strong>: Revisión 1 vez a la semana. Personal inactivo sin justificación conlleva multa.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Eventos y Promociones</h3>
-                    <p>Todos los negocios deben realizar al menos una promoción o evento al mes, avisando con 48 horas de antelación.</p>
+                    <h3>4. SISTEMA DE PENALIZACIONES</h3>
+                    <ul>
+                        <li><strong>1° Strike</strong>: Multa de 25k.</li>
+                        <li><strong>2° Strike</strong>: Multa de 50k.</li>
+                        <li><strong>3° Strike</strong>: Resulta en la Disolución definitiva del negocio, irrevocable e inapelable.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>5. EVENTOS Y DONACIONES ICO</h3>
+                    <ul>
+                        <li><strong>Eventos de negocios</strong>: Deben ser obligatorios y avisados con 48H de antelación. Se realiza 1 vez al mes.</li>
+                        <li><strong>Compra y donaciones</strong>: Si el comprador abandona la ciudad, la administración se queda con el negocio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proximos" style="margin-top: 7rem;">
+            <h2 class="section-title"><span>Próximas</span> Normativas</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🛡️ Normativa Policial (CNP)</h3>
+                    <p>Próximamente se añadirá el reglamento interno de los Cuerpos Nacionales de Policía. Mantente atento para conocer los protocolos de actuación.</p>
+                </div>
+                <div class="card">
+                    <h3>🚑 Normativa EMS</h3>
+                    <p>Apartado dedicado a los protocolos médicos, el sistema de curación y los deberes de las unidades de emergencias sanitarias.</p>
+                </div>
+                <div class="card">
+                    <h3>🔫 Normativa Ilegal y Bandas</h3>
+                    <p>Reglamento para bandas, carteles y mafias. Información sobre secuestros, territorios y uso de armamento pesado.</p>
                 </div>
             </div>
         </section>
