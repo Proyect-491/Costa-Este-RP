@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa Este RP - Normativa y Reglamento</title>
+    <style>
+        :root {
+            --primary: #E50914; /* Rojo intenso */
+            --secondary: #000000; /* Negro */
+            --accent: #FFC90E; /* Amarillo */
+            --text-main: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --bg-card: rgba(20, 20, 20, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #111;
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.98)), radial-gradient(circle at 50% 50%, rgba(229, 9, 20, 0.1) 0%, transparent 70%);
+        }
+
+        /* Barra de navegación animada */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.2);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sección principal (Hero) */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
+        }
+
+        .btn-cta {
+            background: var(--primary);
+            color: var(--text-main);
+            padding: 0.9rem 2.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            background: #FF2E2E;
+            box-shadow: 0 0 25px var(--primary);
+        }
+
+        /* Contenedor de apartados */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-top: 3px solid var(--primary);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 6px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+            backdrop-filter: blur(12px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(229, 9, 20, 0.15);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Animaciones clave */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(229, 9, 20, 0.1);
+            margin-top: 6rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Costa Este <span>RP</span></div>
+        <nav>
+            <a href="#conceptos">Conceptos</a>
+            <a href="#comandos">Comandos</a>
+            <a href="#normas">Normas Generales</a>
+            <a href="#negocios">Negocios</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenidos a <span>Costa Este RP</span></h1>
+        <p>El servidor definitivo donde cada decisión cuenta. Descubre la normativa general y el reglamento para una convivencia justa e inmersiva.</p>
+        <a href="#normas" class="btn-cta">Ver Normativa</a>
+    </section>
+
+    <div class="container">
+        
+        <section id="conceptos">
+            <h2 class="section-title"><span>Conceptos</span> Básicos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>IN CHARACTER (IC)</h3>
+                    <p>Es todo lo que sucede "in-game". Es la vida de tu personaje y sus interacciones dentro de la ciudad de Costa Este.</p>
+                </div>
+                <div class="card">
+                    <h3>OUT OF CHARACTER (OOC)</h3>
+                    <p>Es todo lo que ocurre fuera del juego. No se puede utilizar esta información para conseguir beneficios dentro del juego.</p>
+                </div>
+                <div class="card">
+                    <h3>METAGAMING (MG)</h3>
+                    <p>El Metagaming es el uso de información que se haya obtenido fuera de la ciudad (fuera del juego o OOC).</p>
+                </div>
+                <div class="card">
+                    <h3>POWERGAMING (PG)</h3>
+                    <p>Son aquellas acciones posibles en el juego pero que en la vida real no podemos realizar, como no rolear tras un accidente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comandos" style="margin-top: 7rem;">
+            <h2 class="section-title"><span>Comandos</span> de Rol</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>/me y /do</h3>
+                    <p>Usa <strong>/me</strong> para realizar acciones que no figuran en el listado, y <strong>/do</strong> para expresar emociones, características del entorno o pedir permiso.</p>
+                </div>
+                <div class="card">
+                    <h3>/entorno</h3>
+                    <p>Se utiliza cuando queremos realizar una llamada a la policía (CNP) en tercera persona explicando una situación durante un acto ilícito.</p>
+                </div>
+                <div class="card">
+                    <h3>/auxilio</h3>
+                    <p>Sirve para realizar una llamada a los EMS en tercera persona, explicando qué le ha ocurrido al sujeto herido o abatido.</p>
+                </div>
+                <div class="card">
+                    <h3>/dados y /intentar</h3>
+                    <p>Deciden al azar una opción que beneficie o perjudique a uno de los dos jugadores y que puede devolver "Sí" o "No".</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="normas" style="margin-top: 7rem;">
+            <h2 class="section-title"><span>Normas</span> Generales</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Valorar tu vida</h3>
+                    <p>Obligación de preservar la integridad física de tu personaje ante una situación de peligro, tomando decisiones prudentes.</p>
+                </div>
+                <div class="card">
+                    <h3>Zonas Seguras</h3>
+                    <p>Prohibido realizar actos ilícitos o iniciar un rol agresivo en áreas como hospitales, concesionarios y negocios abiertos.</p>
+                </div>
+                <div class="card">
+                    <h3>Roles Agresivos con Vehículos</h3>
+                    <p>No se puede disparar a abatir de coche a coche, ni de coche a persona a pie, ni de pie a coche, salvo que no se valore la vida.</p>
+                </div>
+                <div class="card">
+                    <h3>Respeto y Comportamientos</h3>
+                    <p>No se tolera el racismo, machismo u homofobia ni en OOC ni mediante roles de esa naturaleza a nivel IC.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="negocios" style="margin-top: 7rem;">
+            <h2 class="section-title">Normativa de <span>Negocios</span></h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Protocolo de Apertura</h3>
+                    <p>Al abrir el negocio debe permanecer operativo al público al menos 20 minutos. Prohibido ausentarse durante este tiempo.</p>
+                </div>
+                <div class="card">
+                    <h3>Gestión de Caja</h3>
+                    <p>Se debe enviar foto del monedero cada 48 horas. Solo los jefes o subjefes pueden manipular la caja con previo aviso.</p>
+                </div>
+                <div class="card">
+                    <h3>Sistemas de Penalizaciones</h3>
+                    <p>El incumplimiento reiterado lleva a multas o strikes. Acumular tres strikes conlleva la disolución definitiva e irrevocable del negocio.</p>
+                </div>
+                <div class="card">
+                    <h3>Eventos y Promociones</h3>
+                    <p>Todos los negocios deben realizar al menos una promoción o evento al mes, avisando con 48 horas de antelación.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Costa Este RP. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.card');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
