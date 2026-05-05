@@ -31,7 +31,6 @@
                 radial-gradient(circle at 90% 80%, rgba(255, 201, 14, 0.05) 0%, transparent 40%);
         }
 
-        /* Cabecera animada */
         header {
             position: fixed;
             top: 0;
@@ -91,7 +90,6 @@
             width: 100%;
         }
 
-        /* Sección de bienvenida (Hero) */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -125,7 +123,6 @@
             opacity: 0;
         }
 
-        /* Información del Servidor */
         .server-info-box {
             display: flex;
             justify-content: center;
@@ -209,12 +206,11 @@
             box-shadow: 0 0 35px var(--primary);
         }
 
-        /* Secciones de apartados */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 8rem 2rem 4rem 2rem;
-            display: none; /* Oculto hasta que se selecciona */
+            display: none; 
         }
 
         .container.active {
@@ -302,7 +298,6 @@
             border-top: 1px solid rgba(229, 9, 20, 0.1);
         }
 
-        /* Animaciones */
         @keyframes scaleUp {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
@@ -566,13 +561,11 @@
 
     <script>
         function mostrarSeccion(id) {
-            // Oculta todos los apartados
             const containers = document.querySelectorAll('.container');
             containers.forEach(container => {
                 container.classList.remove('active');
             });
             
-            // Oculta la página de inicio o muéstrala dependiendo de la selección
             const home = document.getElementById('home');
             if (id === 'home') {
                 home.style.display = 'flex';
@@ -584,7 +577,6 @@
                 }
             }
 
-            // Mueve la vista al inicio del contenido
             window.scrollTo(0, 0);
         }
     </script>
